@@ -1,0 +1,27 @@
+
+//  .body {
+//    min-height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//  }
+//  .content {
+//    flex: 1 0 auto;
+//  }
+//  .footer {
+//    margin-top: auto;
+//  }
+
+.body {
+	height: 100%;
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+.content {
+	flex: 1 0 auto;
+}
+.footer {
+	flex: 0 0 auto;
+}

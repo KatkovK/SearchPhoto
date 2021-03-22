@@ -1,0 +1,20 @@
+<div class="container-fluid header">
+  <mat-toolbar color="primary" class="toolbar">
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon" aria-label="Example icon-button with a menu">
+      <mat-icon>other_houses</mat-icon>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="['main']">
+          <mat-icon>monochrome_photos</mat-icon>
+          <span>SEARCH</span>
+        </button>
+
+        <button mat-menu-item [routerLink]="['card']">
+          <mat-icon>photo_size_select_actual</mat-icon>
+          <span>MY GALERY</span>
+        </button>
+      </mat-menu>
+    </button>
+    <span class="material-icons">camera</span>
+  </mat-toolbar>
+</div>

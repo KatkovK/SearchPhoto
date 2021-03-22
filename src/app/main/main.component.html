@@ -1,0 +1,32 @@
+<div class="container-fluid">
+   <cdk-virtual-scroll-viewport itemSize="{length}" class="example-viewport container-fluid">
+      <div class="block">
+         <form class="search-form">
+            <mat-form-field class="example-full-width">
+               <input matInput class="toolbar-search" type="search" (keyup)="search($event)">
+               <mat-placeholder>Search</mat-placeholder>
+               <mat-icon matSuffix style="font-size: 1.2em">search</mat-icon>
+            </mat-form-field>
+         </form>
+         <mat-paginator class="paginator" [length]="length" [pageSize]="size" [pageIndex]="page"
+            [pageSizeOptions]="[6, 24, 60]" (page)="getNextPageImages($event)">
+         </mat-paginator>
+      </div>
+
+      <div class="row">
+         <div class="col-sm-12 col-md-6 col-lg-4 p-3 card" *cdkVirtualFor="let image of images">
+            <mat-card class="example-card">
+               <mat-card-header>
+                  <mat-card-title>{{image.title}}</mat-card-title>
+               </mat-card-header>
+
+               <img mat-card-image src="{{image.url}}_m.jpg">
+
+               <mat-card-actions>
+                  <button mat-raised-button color="primary" (click)="addImage(image)">Add</button>
+               </mat-card-actions>
+            </mat-card>
+         </div>
+      </div>
+   </cdk-virtual-scroll-viewport>
+</div>
