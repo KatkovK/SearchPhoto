@@ -25,8 +25,7 @@ export class MainComponent implements OnInit {
     this.keyword = event.target.value.toLowerCase();
     if (this.keyword && this.keyword.length > 0) {
       this.restSevice.searchFoto(this.keyword, this.size, this.page)
-        .toPromise()
-        .then(res => {
+        .subscribe(res => {
           this.length = res.photos.pages * this.size;
           this.images = res.photos.photo;
         });
@@ -42,8 +41,7 @@ export class MainComponent implements OnInit {
     this.size = event.pageSize;
     this.page = event.pageIndex;
     this.restSevice.searchFoto(this.keyword, this.size, this.page)
-      .toPromise()
-      .then(res => {
+      .subscribe(res => {
         this.length = res.photos.pages * this.size;
         this.images = res.photos.photo;
       });
